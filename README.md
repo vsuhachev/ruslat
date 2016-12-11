@@ -1,8 +1,8 @@
 # Ruslat
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ruslat`. To experiment with that code, run `bin/console` for an interactive prompt.
+Ruslat is library for bidirectional transliteration for russian to latin.
 
-TODO: Delete this and the text above, and describe your gem
+It is Ruby implementation of Andrey V. Lukyanov transliteration system. See http://tapemark.narod.ru/ruslat.html for more info.
 
 ## Installation
 
@@ -22,7 +22,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'ruslat'
+
+extend Ruslat::Core
+
+puts rus_to_lat('Привет Мир!')
+puts lat_to_rus(rus_to_lat('Привет Мир!'))
+```
 
 ## Development
 
@@ -32,10 +39,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ruslat. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/vsuhachev/ruslat](https://github.com/vsuhachev/ruslat). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
