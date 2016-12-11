@@ -1,5 +1,9 @@
 require 'ruslat/version'
+require 'ruslat/core'
 
 module Ruslat
-  # Your code goes here...
+  def self.included(base)
+    puts "blah #{base.inspect}"
+    base.extend(Core)
+  end
 end
