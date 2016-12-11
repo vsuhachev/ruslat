@@ -269,18 +269,16 @@ module Ruslat
     # Case correct, example: АЛЁША (rus_to_lat)→ ALYoShA (case_correct)→ ALYOSHA
     def case_correct(string)
       string.dup.tap do |str|
-        #FIXME: \u\1 - перевод найденного в верхний регистр. НЕ РАБОТАЕТ
+        str.gsub!(/([A-Z])h([A-Z])/) { |s| s.upcase }
+        str.gsub!(/J([aeou])([A-Z])/) { |s| s.upcase }
 
-        str.gsub!(/([A-Z])h([A-Z])/, '\1H\2')
-        #str.gsub!(/J([aeou])([A-Z])/,'J\u\1\2')
+        str.gsub!(/([A-Z])([A-Z])h/) { |s| s.upcase }
+        str.gsub!(/([A-Z])J([aeou])/) { |s| s.upcase }
+        str.gsub!(/([BCDFGHKLMNPRSTVWXZ])Y([aeou])/) { |s| s.upcase }
 
-        str.gsub!(/([A-Z])([A-Z])h/, '\1\2H')
-        #str.gsub!(/([A-Z])J([aeou])/,'\1J\u\2')
-        #str.gsub!(/([BCDFGHKLMNPRSTVWXZ])Y([aeou])/,'\1Y\u\2')
-
-        str.gsub!(/([A-Z])h ([A-Z][A-Z])/, '\1H \2')
-        #str.gsub!(/J([aeou]) ([A-Z][A-Z])/,'J\u\1 \2')
-        #str.gsub!(/([BCDFGHKLMNPRSTVWXZ])Y([aeou]) ([A-Z][A-Z])/,'\1Y\u\2 \3')
+        str.gsub!(/([A-Z])h\s+([A-Z][A-Z])/) { |s| s.upcase }
+        str.gsub!(/J([aeou])\s+([A-Z][A-Z])/) { |s| s.upcase }
+        str.gsub!(/([BCDFGHKLMNPRSTVWXZ])Y([aeou])\s+([A-Z][A-Z])/) { |s| s.upcase }
       end
     end
 

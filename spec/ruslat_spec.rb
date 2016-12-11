@@ -14,9 +14,12 @@ describe Ruslat do
   describe '.case_correct' do
     it { expect(rus_to_lat('АЛЁША')).to eq('ALYoShA') }
     it { expect(case_correct(rus_to_lat('АЛЁША'))).to eq('ALYOSHA') }
+
+    it { expect(rus_to_lat('Я КРЕВЕДКО')).to eq('Ja KREVEDKO') }
+    it { expect(case_correct(rus_to_lat('Я КРЕВЕДКО'))).to eq('JA KREVEDKO') }
   end
 
-  describe '#typo_correct' do
+  describe '.typo_correct' do
     it { expect(typo_correct('Пpивeт')).to eq('Привет') }
   end
 end
