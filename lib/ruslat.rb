@@ -1,4 +1,4 @@
-require "ruslat/version"
+require 'ruslat/version'
 
 module Ruslat
   # Your code goes here...
