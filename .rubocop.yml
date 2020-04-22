@@ -1,22 +1,22 @@
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.7
   Exclude:
     - 'bin/*'
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
 
 Style/AsciiComments:
   Enabled: false
 
-Style/CaseIndentation:
-  IndentWhenRelativeTo: case
+Layout/CaseIndentation:
+  EnforcedStyle: case
   IndentOneStep: true
 
 Style/Documentation:
   Enabled: false
 
-Style/FirstParameterIndentation:
+Layout/FirstParameterIndentation:
   IndentationWidth: 4
 
 Style/FrozenStringLiteralComment:
@@ -27,13 +27,7 @@ Style/HashSyntax:
     - '*.rake'
     - 'Rakefile'
 
-Style/IndentArray:
-  IndentationWidth: 4
-
-Style/IndentHash:
-  IndentationWidth: 4
-
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
   IndentationWidth: 4
 
