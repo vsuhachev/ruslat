@@ -44,7 +44,6 @@ module Ruslat
     # Russian to Latin converter
     def rus_to_lat(string)
       str = string.dup
-      # rubocop:disable Layout/LineLength
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])ьй([аоуАОУ])/, '\1jy\2')
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])Ьй([аоуАОУ])/, '\1Jy\2')
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])ьЙ([аоуАОУ])/, '\1jY\2')
@@ -77,15 +76,15 @@ module Ruslat
       str.gsub!(/([^абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯeEyY])Йе/, '\1Ye')
       str.gsub!(/([^абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯeEyY])йЕ/, '\1yE')
       str.gsub!(/([^абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯeEyY])ЙЕ/, '\1YE')
-      str.gsub!(/^йе/, 'ye')
-      str.gsub!(/^Йе/, 'Ye')
-      str.gsub!(/^йЕ/, 'yE')
-      str.gsub!(/^ЙЕ/, 'YE')
+      str.gsub!(/^йе/, "ye")
+      str.gsub!(/^Йе/, "Ye")
+      str.gsub!(/^йЕ/, "yE")
+      str.gsub!(/^ЙЕ/, "YE")
 
-      str.gsub!(/йэ/, 'йeh')
-      str.gsub!(/Йэ/, 'Йeh')
-      str.gsub!(/йЭ/, 'йEh')
-      str.gsub!(/ЙЭ/, 'ЙEH')
+      str.gsub!(/йэ/, "йeh")
+      str.gsub!(/Йэ/, "Йeh")
+      str.gsub!(/йЭ/, "йEh")
+      str.gsub!(/ЙЭ/, "ЙEH")
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])й/, '\1ih')
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])Й/, '\1Ih')
 
@@ -112,164 +111,163 @@ module Ruslat
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])Ь$/, '\1J')
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])ь([^абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯeEyY])/, '\1j\2')
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])Ь([^абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯeEyY])/, '\1J\2')
-      str.gsub!(/ь/, 'jh')
-      str.gsub!(/Ь/, 'Jh')
+      str.gsub!(/ь/, "jh")
+      str.gsub!(/Ь/, "Jh")
 
-      str.gsub!(/й/, 'j')
-      str.gsub!(/Й/, 'J')
+      str.gsub!(/й/, "j")
+      str.gsub!(/Й/, "J")
 
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])е/, '\1e')
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])Е/, '\1E')
-      str.gsub!(/е/, 'je')
-      str.gsub!(/Е/, 'Je')
+      str.gsub!(/е/, "je")
+      str.gsub!(/Е/, "Je")
 
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])ё/, '\1yo')
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])Ё/, '\1Yo')
-      str.gsub!(/ё/, 'jo')
-      str.gsub!(/Ё/, 'Jo')
+      str.gsub!(/ё/, "jo")
+      str.gsub!(/Ё/, "Jo")
 
       str.gsub!(/ы([аоуэАОУЭ])/, 'yh\1')
       str.gsub!(/Ы([аоуэАОУЭ])/, 'Yh\1')
-      str.gsub!(/ы/, 'y')
-      str.gsub!(/Ы/, 'Y')
+      str.gsub!(/ы/, "y")
+      str.gsub!(/Ы/, "Y")
 
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])э/, '\1eh')
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])Э/, '\1Eh')
-      str.gsub!(/э/, 'e')
-      str.gsub!(/Э/, 'E')
+      str.gsub!(/э/, "e")
+      str.gsub!(/Э/, "E")
 
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])ю/, '\1yu')
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])Ю/, '\1Yu')
-      str.gsub!(/ю/, 'ju')
-      str.gsub!(/Ю/, 'Ju')
+      str.gsub!(/ю/, "ju")
+      str.gsub!(/Ю/, "Ju")
 
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])я/, '\1ya')
       str.gsub!(/([бвгджзклмнпрстфхцчшщБВГДЖЗКЛМНПРСТФХЦЧШЩ])Я/, '\1Ya')
-      str.gsub!(/я/, 'ja')
-      str.gsub!(/Я/, 'Ja')
+      str.gsub!(/я/, "ja")
+      str.gsub!(/Я/, "Ja")
 
-      str.gsub!(/ж/, 'zh')
-      str.gsub!(/ч/, 'ch')
-      str.gsub!(/ш/, 'sh')
-      str.gsub!(/щ/, 'xh')
-      str.gsub!(/Ж/, 'Zh')
-      str.gsub!(/Ч/, 'Ch')
-      str.gsub!(/Ш/, 'Sh')
-      str.gsub!(/Щ/, 'Xh')
+      str.gsub!(/ж/, "zh")
+      str.gsub!(/ч/, "ch")
+      str.gsub!(/ш/, "sh")
+      str.gsub!(/щ/, "xh")
+      str.gsub!(/Ж/, "Zh")
+      str.gsub!(/Ч/, "Ch")
+      str.gsub!(/Ш/, "Sh")
+      str.gsub!(/Щ/, "Xh")
 
       str.tr!(
-        'абвгдзиклмнопрстуфхцъАБВГДЗИКЛМНОПРСТУФХЦЪ',
-        'abvgdziklmnoprstufxcqABVGDZIKLMNOPRSTUFXCQ'
+        "абвгдзиклмнопрстуфхцъАБВГДЗИКЛМНОПРСТУФХЦЪ",
+        "abvgdziklmnoprstufxcqABVGDZIKLMNOPRSTUFXCQ"
       )
 
-      str.gsub!(/№/, 'Nh')
+      str.gsub!(/№/, "Nh")
 
       str
-      # rubocop:enable Layout/LineLength
     end
 
     # Latin to Russian converter
     def lat_to_rus(string)
       str = string.dup
 
-      str.gsub!(/[nN][hH]/, '№')
-      str.gsub!(/e[hH]/, 'э')
-      str.gsub!(/E[hH]/, 'Э')
-      str.gsub!(/i[hH]/, 'й')
-      str.gsub!(/I[hH]/, 'Й')
-      str.gsub!(/j[hH]/, 'ь')
-      str.gsub!(/J[hH]/, 'Ь')
-      str.gsub!(/y[hH]/, 'ы')
-      str.gsub!(/Y[hH]/, 'Ы')
+      str.gsub!(/[nN][hH]/, "№")
+      str.gsub!(/e[hH]/, "э")
+      str.gsub!(/E[hH]/, "Э")
+      str.gsub!(/i[hH]/, "й")
+      str.gsub!(/I[hH]/, "Й")
+      str.gsub!(/j[hH]/, "ь")
+      str.gsub!(/J[hH]/, "Ь")
+      str.gsub!(/y[hH]/, "ы")
+      str.gsub!(/Y[hH]/, "Ы")
 
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])ja/, '\1ья')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])jA/, '\1ьЯ')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])Ja/, '\1Ья')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])JA/, '\1ЬЯ')
-      str.gsub!(/j[aA]/, 'я')
-      str.gsub!(/J[aA]/, 'Я')
+      str.gsub!(/j[aA]/, "я")
+      str.gsub!(/J[aA]/, "Я")
 
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])je/, '\1ье')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])jE/, '\1ьЕ')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])Je/, '\1Ье')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])JE/, '\1ЬЕ')
-      str.gsub!(/j[eE]/, 'е')
-      str.gsub!(/J[eE]/, 'Е')
+      str.gsub!(/j[eE]/, "е")
+      str.gsub!(/J[eE]/, "Е")
 
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])ji/, '\1ьи')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])jI/, '\1ьИ')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])Ji/, '\1Ьи')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])JI/, '\1ЬИ')
-      str.gsub!(/ji/, 'йи')
-      str.gsub!(/jI/, 'йИ')
-      str.gsub!(/Ji/, 'Йи')
-      str.gsub!(/JI/, 'ЙИ')
+      str.gsub!(/ji/, "йи")
+      str.gsub!(/jI/, "йИ")
+      str.gsub!(/Ji/, "Йи")
+      str.gsub!(/JI/, "ЙИ")
 
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])jo/, '\1ьё')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])jO/, '\1ьЁ')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])Jo/, '\1Ьё')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])JO/, '\1ЬЁ')
-      str.gsub!(/j[oO]/, 'ё')
-      str.gsub!(/J[oO]/, 'Ё')
+      str.gsub!(/j[oO]/, "ё")
+      str.gsub!(/J[oO]/, "Ё")
 
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])ju/, '\1ью')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])jU/, '\1ьЮ')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])Ju/, '\1Ью')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])JU/, '\1ЬЮ')
-      str.gsub!(/j[uU]/, 'ю')
-      str.gsub!(/J[uU]/, 'Ю')
+      str.gsub!(/j[uU]/, "ю")
+      str.gsub!(/J[uU]/, "Ю")
 
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])y[aA]/, '\1я')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])Y[aA]/, '\1Я')
-      str.gsub!(/ya/, 'йа')
-      str.gsub!(/yA/, 'йА')
-      str.gsub!(/Ya/, 'Йа')
-      str.gsub!(/YA/, 'ЙА')
+      str.gsub!(/ya/, "йа")
+      str.gsub!(/yA/, "йА")
+      str.gsub!(/Ya/, "Йа")
+      str.gsub!(/YA/, "ЙА")
 
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])y[eE]/, '\1е')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])Y[eE]/, '\1Е')
-      str.gsub!(/ye/, 'йе')
-      str.gsub!(/yE/, 'йЕ')
-      str.gsub!(/Ye/, 'Йе')
-      str.gsub!(/YE/, 'ЙЕ')
+      str.gsub!(/ye/, "йе")
+      str.gsub!(/yE/, "йЕ")
+      str.gsub!(/Ye/, "Йе")
+      str.gsub!(/YE/, "ЙЕ")
 
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])y[oO]/, '\1ё')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])Y[oO]/, '\1Ё')
-      str.gsub!(/yo/, 'йо')
-      str.gsub!(/yO/, 'йО')
-      str.gsub!(/Yo/, 'Йо')
-      str.gsub!(/YO/, 'ЙО')
+      str.gsub!(/yo/, "йо")
+      str.gsub!(/yO/, "йО")
+      str.gsub!(/Yo/, "Йо")
+      str.gsub!(/YO/, "ЙО")
 
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])y[uU]/, '\1ю')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])Y[uU]/, '\1Ю')
-      str.gsub!(/yu/, 'йу')
-      str.gsub!(/yU/, 'йУ')
-      str.gsub!(/Yu/, 'Йу')
-      str.gsub!(/YU/, 'ЙУ')
+      str.gsub!(/yu/, "йу")
+      str.gsub!(/yU/, "йУ")
+      str.gsub!(/Yu/, "Йу")
+      str.gsub!(/YU/, "ЙУ")
 
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])e/, '\1е')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])E/, '\1Е')
-      str.gsub!(/e/, 'э')
-      str.gsub!(/E/, 'Э')
+      str.tr!("e", "э")
+      str.tr!("E", "Э")
 
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])j/, '\1ь')
       str.gsub!(/([bcdfghklmnprstvwxzBCDFGHKLMNPRSTVWXZ])J/, '\1Ь')
-      str.gsub!(/j/, 'й')
-      str.gsub!(/J/, 'Й')
+      str.tr!("j", "й")
+      str.tr!("J", "Й")
 
-      str.gsub!(/c[hH]/, 'ч')
-      str.gsub!(/s[hH]/, 'ш')
-      str.gsub!(/x[hH]/, 'щ')
-      str.gsub!(/z[hH]/, 'ж')
+      str.gsub!(/c[hH]/, "ч")
+      str.gsub!(/s[hH]/, "ш")
+      str.gsub!(/x[hH]/, "щ")
+      str.gsub!(/z[hH]/, "ж")
 
-      str.gsub!(/C[hH]/, 'Ч')
-      str.gsub!(/S[hH]/, 'Ш')
-      str.gsub!(/X[hH]/, 'Щ')
-      str.gsub!(/Z[hH]/, 'Ж')
+      str.gsub!(/C[hH]/, "Ч")
+      str.gsub!(/S[hH]/, "Ш")
+      str.gsub!(/X[hH]/, "Щ")
+      str.gsub!(/Z[hH]/, "Ж")
 
       str.tr!(
-        'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
-        'абцдэфгхийклмнопърстуввхызАБЦДЭФГХИЙКЛМНОПЪРСТУВВХЫЗ'
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "абцдэфгхийклмнопърстуввхызАБЦДЭФГХИЙКЛМНОПЪРСТУВВХЫЗ"
       )
       str
     end
@@ -293,22 +291,22 @@ module Ruslat
     # Typo correct replaces 'cyrillic-look-like' latin symbols to cyrillic ones
     def rus_typo_correct(string)
       string.tr(
-        'acekopuxyABCEHKMOPTXY',
-        'асекорихуАВСЕНКМОРТХУ'
+        "acekopuxyABCEHKMOPTXY",
+        "асекорихуАВСЕНКМОРТХУ"
       )
     end
 
     # Deprecated, use `rus_typo_correct` instead
     def typo_correct(*args)
-      $stderr.puts("DEPRECATION WARNING: Usage of `typo_correct` deprecated, use `rus_typo_correct` instead")
+      warn("DEPRECATION WARNING: Usage of `typo_correct` deprecated, use `rus_typo_correct` instead")
       rus_typo_correct(*args)
     end
 
     # Typo correct replaces 'cyrillic-look-like' latin symbols to cyrillic ones
     def lat_typo_correct(string)
       string.tr(
-        'асекорихуАВСЕНКМОРТХУ',
-        'acekopuxyABCEHKMOPTXY'
+        "асекорихуАВСЕНКМОРТХУ",
+        "acekopuxyABCEHKMOPTXY"
       )
     end
   end

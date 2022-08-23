@@ -3,15 +3,14 @@
 Ruslat is library for bidirectional transliteration for russian to latin.
 
 It is Ruby implementation of Andrey V. Lukyanov transliteration system.
-See [http://tapemark.narod.ru/ruslat.html](http://tapemark.narod.ru/ruslat.html)
-for more info.
+See <http://tapemark.narod.ru/ruslat.html> for more info.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ruslat'
+gem "ruslat"
 ```
 
 And then execute:
@@ -25,20 +24,20 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-require 'ruslat'
+require "ruslat"
 
-Ruslat.rus_to_lat('Привет Мир!') # => "Privet Mir!" 
-Ruslat.lat_to_rus('Privet Mir!') # => "Привет Мир!"
+Ruslat.rus_to_lat("Привет Мир!") # => "Privet Mir!" 
+Ruslat.lat_to_rus("Privet Mir!") # => "Привет Мир!"
 
-Ruslat.rus_to_lat('АЛЁША') # => "ALYoShA"
-Ruslat.case_correct('ALYoShA') # => "ALYOSHA"
+Ruslat.rus_to_lat("АЛЁША") # => "ALYoShA"
+Ruslat.case_correct("ALYoShA") # => "ALYOSHA"
 
-typo = 'CAPA'
+typo = "CAPA"
 typo.bytes # => [67, 65, 80, 65] 
 Ruslat.rus_typo_correct(typo) # => "САРА"
 Ruslat.rus_typo_correct(typo).bytes # => [208, 161, 208, 144, 208, 160, 208, 144]
 
-typo = 'Sаrа'
+typo = "Sаrа"
 typo.bytes # => [83, 208, 176, 114, 208, 176] 
 Ruslat.lat_typo_correct(typo) # => "Sara"
 Ruslat.lat_typo_correct(typo).bytes # => [83, 97, 114, 97]

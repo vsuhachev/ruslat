@@ -1,5 +1,5 @@
-require 'ruslat/version'
-require 'ruslat/core'
+require "ruslat/version"
+require "ruslat/core"
 
 module Ruslat
   extend Core

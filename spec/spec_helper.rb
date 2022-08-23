@@ -1,1 +1,1 @@
-require 'ruslat'
+require "ruslat"
