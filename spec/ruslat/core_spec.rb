@@ -17,17 +17,17 @@ describe Ruslat::Core do
     it { expect(rus_to_lat("Примелькавшийся")).to eq("Primeljkavshijsya") }
   end
 
-  describe ".case_correct" do
+  describe ".lat_case_correct" do
     it {
       a = "ALYoShA"
-      expect { case_correct(a) }.to_not(change { a })
+      expect { lat_case_correct(a) }.to_not(change { a })
     }
 
     it { expect(rus_to_lat("АЛЁША")).to eq("ALYoShA") }
-    it { expect(case_correct(rus_to_lat("АЛЁША"))).to eq("ALYOSHA") }
+    it { expect(lat_case_correct(rus_to_lat("АЛЁША"))).to eq("ALYOSHA") }
 
     it { expect(rus_to_lat("Я КРЕВЕДКО")).to eq("Ja KREVEDKO") }
-    it { expect(case_correct(rus_to_lat("Я КРЕВЕДКО"))).to eq("JA KREVEDKO") }
+    it { expect(lat_case_correct(rus_to_lat("Я КРЕВЕДКО"))).to eq("JA KREVEDKO") }
   end
 
   describe ".rus_typo_correct" do

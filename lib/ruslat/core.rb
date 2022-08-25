@@ -8,8 +8,8 @@ module Ruslat
   # Обозначения:
   # * RUSLAT - #rus_to_lat
   # * LATRUS - #lat_to_rus
-  # * CASECORRECT - #case_correct
-  # * LCORRECT - #typo_correct
+  # * CASECORRECT - #lat_case_correct
+  # * LCORRECT - #rus_typo_correct
   #
   # RUSLAT перекодирует кириллицу в латиницу.
   #
@@ -272,8 +272,8 @@ module Ruslat
       str
     end
 
-    # Case correct, example: АЛЁША (rus_to_lat)→ ALYoShA (case_correct)→ ALYOSHA
-    def case_correct(string)
+    # Case correct, example: АЛЁША (rus_to_lat)→ ALYoShA (lat_case_correct)→ ALYOSHA
+    def lat_case_correct(string)
       str = string.dup
       str.gsub!(/([A-Z])h([A-Z])/, &:upcase)
       str.gsub!(/J([aeou])([A-Z])/, &:upcase)
@@ -286,6 +286,12 @@ module Ruslat
       str.gsub!(/J([aeou])\s+([A-Z][A-Z])/, &:upcase)
       str.gsub!(/([BCDFGHKLMNPRSTVWXZ])Y([aeou])\s+([A-Z][A-Z])/, &:upcase)
       str
+    end
+
+    # Deprecated, use `lat_case_correct` instead
+    def case_correct(string)
+      warn("DEPRECATION WARNING: Usage of `case_correct` deprecated, use `lat_case_correct` instead")
+      lat_case_correct(string)
     end
 
     # Typo correct replaces 'cyrillic-look-like' latin symbols to cyrillic ones
@@ -302,7 +308,7 @@ module Ruslat
       rus_typo_correct(*args)
     end
 
-    # Typo correct replaces 'cyrillic-look-like' latin symbols to cyrillic ones
+    # Typo correct replaces 'latin-look-like' cyrillic symbols to latin ones
     def lat_typo_correct(string)
       string.tr(
         "асекорихуАВСЕНКМОРТХУ",

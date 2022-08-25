@@ -30,7 +30,7 @@ Ruslat.rus_to_lat("Привет Мир!") # => "Privet Mir!"
 Ruslat.lat_to_rus("Privet Mir!") # => "Привет Мир!"
 
 Ruslat.rus_to_lat("АЛЁША") # => "ALYoShA"
-Ruslat.case_correct("ALYoShA") # => "ALYOSHA"
+Ruslat.lat_case_correct("ALYoShA") # => "ALYOSHA"
 
 typo = "CAPA"
 typo.bytes # => [67, 65, 80, 65] 
